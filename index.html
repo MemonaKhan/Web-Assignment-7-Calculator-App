@@ -1,15 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+
+    <div class="background">
+        <div class="calc">
+                <div >
+                    <p id="history"></p>
+                    <p id="result" maxlength="15"></p>
+                    <!-- <input class="result" type="text" maxlength="15" onclick="style='border=none'"> -->
+                </div>
+                <table>
+                    <tr>
+                        <td><button class="opr" onclick="clearResult()">C</button></td>
+                        <td><button class="opr" onclick="backSpace()">CE</button></td>
+                        <td><button class="opr"  onclick="operation('/')">÷</button></td>
+                        <td><button class="opr"  onclick="operation('*')">×</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="nums" onclick="setResult('7')">7</button></td>
+                        <td><button class="nums" onclick="setResult('8')">8</button></td>
+                        <td><button class="nums" onclick="setResult('9')">9</button></td>
+                        <td><button class="opr"  onclick="operation('-')">-</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="nums" onclick="setResult('4')">4</button></td>
+                        <td><button class="nums" onclick="setResult('5')">5</button></td>
+                        <td><button class="nums" onclick="setResult('6')">6</button></td>
+                        <td><button class="opr"  onclick="operation('+')">+</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="nums" onclick="setResult('1')">1</button></td>
+                        <td><button class="nums" onclick="setResult('2')">2</button></td>
+                        <td><button class="nums" onclick="setResult('3')">3</button></td>
+                        <td rowspan="2"><button class="equals" onclick="operation('=')">=</button></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button class="zero" onclick="setResult(0)">0</button></td>
+                        <td><button class="opr" onclick="setResult('.')">.</button></td>
+                    </tr>
+                </table>
+        </div>
+    </div>
 
 
     <script src="app.js"></script>
 </body>
+
 </html>
