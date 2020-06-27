@@ -17,8 +17,10 @@ function clearResult() {
 }
 function backSpace() {
     var result = getResult();
+    var history = getHistory();
     result = result.substr(0, result.length - 1);
     clearResult();
+    setHistory(history);
     setResult(result);
 }
 function operation(opr) {
@@ -31,13 +33,11 @@ function operation(opr) {
             setResult(eval(history));
             setHistory(history);
         }
-        else{
+        else {
             clearResult();
-            history+=opr;
+            history += opr;
             setHistory(history);
         }
-
-
 
     }
 }

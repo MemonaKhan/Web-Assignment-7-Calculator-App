@@ -36,7 +36,6 @@ body{
 .calc #result{
     font-size: 35px;
     font-family: cursive;
-    /* overflow: hidden; */
     font-weight: bold;
 }
 .calc button{
