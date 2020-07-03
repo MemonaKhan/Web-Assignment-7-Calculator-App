@@ -1,19 +1,19 @@
 
 function getHistory() {
-    return document.getElementById("history").innerText;
+    return document.getElementById("history").value;
 }
 function setHistory(num) {
-    document.getElementById("history").innerText = num;
+    document.getElementById("history").value = num;
 }
 function getResult() {
-    return document.getElementById("result").innerText;
+    return document.getElementById("result").value;
 }
 function setResult(num) {
-    document.getElementById("result").innerText += num;
+    document.getElementById("result").value += num;
 }
 function clearResult() {
-    document.getElementById("result").innerText = "";
-    document.getElementById("history").innerText = "";
+    document.getElementById("result").value = "";
+    document.getElementById("history").value = "";
 }
 function backSpace() {
     var result = getResult();
@@ -27,15 +27,32 @@ function operation(opr) {
     var result = getResult();
     var history = getHistory();
     if (result != "") {
-        history += result;
+        console.log("history+=reult " + history);
         if (opr == '=') {
+            history += result;
             clearResult();
             setResult(eval(history));
             setHistory(history);
         }
         else {
-            clearResult();
+            console.log("before clear result " + history);
+            if (history[history.length - 1] != opr) {
+                if (eval(history) == result) {
+                    clearResult();
+                    history = result;
+                    console.log("after if " + history);
+                }
+                else {
+                    history += result;
+                    clearResult();
+                }
+            }
+            else{
+                history += result;
+                    clearResult();
+            }
             history += opr;
+            console.log("history += opr " + history);
             setHistory(history);
         }
 

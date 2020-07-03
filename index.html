@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -13,9 +14,10 @@
     <div class="background">
         <div class="calc">
                 <div >
-                    <p id="history"></p>
-                    <p id="result" maxlength="15"></p>
+                    <input type="text" id="history" readonly></input>
+                    <input type="text" id="result" maxlength="10" size="9"></input>
                 </div>
+                <div>
                 <table>
                     <tr>
                         <td><button class="opr" onclick="clearResult()">C</button></td>
@@ -46,6 +48,7 @@
                         <td><button class="opr" onclick="setResult('.')">.</button></td>
                     </tr>
                 </table>
+            </div>
         </div>
     </div>
 
