@@ -27,7 +27,6 @@ function operation(opr) {
     var result = getResult();
     var history = getHistory();
     if (result != "") {
-        console.log("history+=reult " + history);
         if (opr == '=') {
             history += result;
             clearResult();
@@ -35,12 +34,10 @@ function operation(opr) {
             setHistory(history);
         }
         else {
-            console.log("before clear result " + history);
             if (history[history.length - 1] != opr) {
                 if (eval(history) == result) {
                     clearResult();
                     history = result;
-                    console.log("after if " + history);
                 }
                 else {
                     history += result;
@@ -52,7 +49,6 @@ function operation(opr) {
                     clearResult();
             }
             history += opr;
-            console.log("history += opr " + history);
             setHistory(history);
         }
 
